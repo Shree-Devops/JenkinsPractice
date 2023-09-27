@@ -6,6 +6,7 @@ environment{
 Options {
 	disableConcurrentBuild(); //disable parallel builds
 	retry(1)
+	skipStatesAfterUnstable()
 }
 	stages{
 		stage('checkout'){
