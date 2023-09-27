@@ -3,7 +3,7 @@ agent any
 environment{
 	ART_URL=''
 }
-Options {
+options {
 	disableConcurrentBuild(); //disable parallel builds
 	retry(1)
 	skipStatesAfterUnstable()
