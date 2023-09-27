@@ -6,12 +6,6 @@ environment{
 options {
 	disableConcurrentBuilds(); //disable parallel builds
 	retry(1)
-	skipStagesAfterUnstable()
-	timeout(time:5, unit: 'MINUTES')
-	tools{
-		maven 'MAVEN'
-		jdk '<>'
-	}
 }
 	stages{
 		stage('checkout'){
