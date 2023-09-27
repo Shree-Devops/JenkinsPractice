@@ -8,6 +8,10 @@ options {
 	retry(1)
 	skipStagesAfterUnstable()
 	timeout(time:5, unit: 'MINUTES')
+	tools{
+		maven 'MAVEN'
+		jdk '<>'
+	}
 }
 	stages{
 		stage('checkout'){
@@ -29,6 +33,17 @@ options {
 			steps{
 				echo 'Archiving!!'
 				archiveArtifacts 'target/*.jar'
+			}
+		}
+		stage('test'){
+			parallel{
+				stage('Run test on Chrome'){
+					agent(lable 'ChromeTestRunner')
+					mvn -DstoryName='Somefile.Story'
+				}, stage('run on firefox'){
+					agent(lable 'FirefoxTestRunner')
+					mvn -DstoryName='Somefile.Story'
+				}
 			}
 		}
 	}
