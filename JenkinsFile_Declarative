@@ -4,7 +4,7 @@ agent any
 		stage('checkout'){
 			steps{
 				echo 'checking out!!'
-				https://github.com/Shree-Devops/JenkinsPractice.git
+				git 'https://github.com/Shree-Devops/JenkinsPractice.git'
 			}
 		}
 		stage('build'){
