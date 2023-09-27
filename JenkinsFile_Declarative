@@ -4,7 +4,7 @@ environment{
 	ART_URL=''
 }
 options {
-	disableConcurrentBuild(); //disable parallel builds
+	disableConcurrentBuilds(); //disable parallel builds
 	retry(1)
 	skipStagesAfterUnstable()
 	timeout(time:5, unit: 'MINUTES')
