@@ -33,7 +33,7 @@ options {
 	post{
 		always{
 			echo 'Pipeline finished'
-			step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/*.xml'])
+			//step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/*.xml'])
 		}
 	}
 }
